@@ -1,62 +1,127 @@
 body{
-font-family:Arial, sans-serif;
+
+font-family:Arial;
+background:#f2f2f2;
+margin:0;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+/* login */
+
+.loginBox{
+
 background:white;
-color:black;
-padding:20px;
+padding:40px;
+border-radius:10px;
+width:300px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+
 }
 
-main{
-max-width:600px;
-margin:auto;
-border:1px solid #ccc;
-padding:20px;
-border-radius:8px;
-}
+.loginBox input{
 
-input{
 width:100%;
 padding:10px;
-margin-bottom:10px;
-border:2px solid #ccc;
+margin-top:10px;
+
 }
 
-button{
+.loginBox button{
+
+margin-top:10px;
 width:100%;
+padding:10px;
+
+}
+
+/* chat */
+
+.chatContainer{
+
+width:400px;
+height:600px;
+background:white;
+display:flex;
+flex-direction:column;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+
+}
+
+.chatHeader{
+
+background:#007bff;
+color:white;
+padding:15px;
+text-align:center;
+font-weight:bold;
+
+}
+
+#chatWindow{
+
+flex:1;
+padding:10px;
+overflow-y:auto;
+
+}
+
+.message{
+
+padding:10px;
+border-radius:6px;
+margin:5px 0;
+max-width:75%;
+
+}
+
+.user{
+
+background:#ddd;
+margin-left:auto;
+
+}
+
+.bot{
+
+color:white;
+
+}
+
+.chatInput{
+
+display:flex;
+border-top:1px solid #ccc;
+
+}
+
+.chatInput input{
+
+flex:1;
+padding:10px;
+border:none;
+
+}
+
+.chatInput button{
+
 padding:10px;
 background:#007bff;
 color:white;
 border:none;
-cursor:pointer;
+
 }
 
-button:hover{
-background:#0056b3;
-}
+/* WCAG focus */
 
 input:focus,
 button:focus{
+
 outline:3px solid black;
-}
 
-#chat{
-margin-top:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.message{
-padding:10px;
-border-radius:6px;
-max-width:80%;
-white-space:pre-wrap;
-}
-
-.user{
-background:#ddd;
-align-self:flex-end;
-}
-
-.bot{
-align-self:flex-start;
 }
