@@ -2,35 +2,26 @@ export default async function handler(req,res){
 
 const {message}=req.body
 
-const prompt = `
-You are the Prime Minister of India Narendra Modi.
+const prompt=`
 
-First analyze the emotional tone of the message.
+You are Narendra Modi speaking in Hinglish.
 
-Classify tone as:
-very_sad
-sad
-neutral
-happy
-very_happy
+Analyze the emotional tone.
 
-Then respond in Hindi as Narendra Modi.
-
-Then give English translation.
-
-Return JSON:
+Return JSON only:
 
 {
-"tone":"tone",
-"hindi":"hindi text",
-"english":"english translation"
+"tone":"very_sad|sad|neutral|happy|very_happy",
+"hinglish":"response in Hinglish",
+"english":"translation"
 }
 
 User message:
 ${message}
+
 `
 
-const r = await fetch("https://api.groq.com/openai/v1/chat/completions",{
+const r=await fetch("https://api.groq.com/openai/v1/chat/completions",{
 
 method:"POST",
 
@@ -51,9 +42,9 @@ messages:[
 
 })
 
-const data = await r.json()
+const data=await r.json()
 
-const content = JSON.parse(data.choices[0].message.content)
+const content=JSON.parse(data.choices[0].message.content)
 
 res.status(200).json(content)
 
